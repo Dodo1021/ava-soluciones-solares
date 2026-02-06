@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVA Soluciones Solares | Paneles Solares y Aires Acondicionados en Ixtlán del Río</title>
+    <meta name="description" content="Expertos en energía solar y climatización en Ixtlán del Río, Nayarit. Paneles solares, aires acondicionados con instalación incluida. ¡Cotiza ahora!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .header-cta {
+            background: linear-gradient(135deg, #f7b731 0%, #f5a623 100%);
+            color: #1a1a2e;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(247, 183, 49, 0.4);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23ffffff10" stroke-width="0.5"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: #f7b731;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f7b731 0%, #f5a623 100%);
+            color: #1a1a2e;
+            padding: 16px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(247, 183, 49, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 16px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #f7b731;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, #f7b731 0%, #ff6b35 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .promo-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .promo-banner h2 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .promo-banner .price-old {
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
+            text-decoration: line-through;
+        }
+
+        .promo-banner .price-new {
+            font-size: 42px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .promo-banner p {
+            color: rgba(255,255,255,0.9);
+            margin-top: 10px;
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 20px;
+            background: #f8fafc;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
+        }
+
+        .benefits .section-header h2,
+        .benefits .section-header p {
+            color: #fff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .benefit-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f7b731;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item p {
+            color: rgba(255,255,255,0.8);
+            font-size: 15px;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 100px 20px;
+            background: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #64748b;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .contact-item-icon {
+            font-size: 30px;
+        }
+
+        .contact-item-text h4 {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .contact-item-text p {
+            font-size: 16px;
+            color: #1e3a5f;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #fff;
+            padding: 20px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .contact-map {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0d2137;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #f7b731;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .header-cta {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+
+            .promo-banner h2 {
+                font-size: 22px;
+            }
+
+            .promo-banner .price-new {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="AVA Soluciones Solares">
+            </div>
+            <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="header-cta">📞 Cotizar Ahora</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Energía Solar y <span>Climatización</span> para tu Hogar</h1>
+                <p>Ahorra en tu recibo de luz con paneles solares y mantén tu hogar fresco con nuestros aires acondicionados. Instalación profesional en Ixtlán del Río y alrededores.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20paneles%20solares" class="btn-primary">☀️ Paneles Solares</a>
+                    <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20aires%20acondicionados" class="btn-secondary">❄️ Aires Acondicionados</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="Paneles Solares">
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="promo-content">
+            <h2>🔥 ¡GRAN PROMOCIÓN! 🔥</h2>
+            <p>Aire Acondicionado 1 Tonelada + Instalación Básica</p>
+            <span class="price-old">$7,800.00</span>
+            <div class="price-new">$6,780.00</div>
+            <p>*Aire convencional de 1 ton a 110V solo frío</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Nuestros Servicios</h2>
+                <p>Soluciones integrales en energía solar y climatización para hogares y negocios</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">☀️</div>
+                    <h3>Paneles Solares</h3>
+                    <p>Reduce hasta un 95% tu recibo de luz. Instalación profesional, garantía y financiamiento disponible.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <h3>Aires Acondicionados</h3>
+                    <p>Venta e instalación de equipos de las mejores marcas. Minisplits, aires convencionales y más.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Mantenimiento</h3>
+                    <p>Servicio de mantenimiento preventivo y correctivo para que tus equipos funcionen siempre al máximo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>¿Por Qué Elegirnos?</h2>
+                <p>Más de años de experiencia nos respaldan</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✅</div>
+                    <h3>Instalación Profesional</h3>
+                    <p>Técnicos certificados y equipos de alta calidad</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Precios Competitivos</h3>
+                    <p>Las mejores ofertas de la región</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Garantía</h3>
+                    <p>Respaldamos todos nuestros trabajos</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📍</div>
+                    <h3>Servicio Local</h3>
+                    <p>Atención rápida en Ixtlán del Río y alrededores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Contáctanos</h2>
+                    <p>Estamos listos para ayudarte. Solicita tu cotización sin compromiso.</p>
+                    
+                    <div class="contact-item">
+                        <span class="contact-item-icon">📍</span>
+                        <div class="contact-item-text">
+                            <h4>Dirección</h4>
+                            <p>Matamoros #6 esq. con Hidalgo, Ixtlán del Río, Nayarit</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-item-icon">📞</span>
+                        <div class="contact-item-text">
+                            <h4>Teléfonos</h4>
+                            <p>324-102-97-84 / 324-108-11-64</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-item-icon">💬</span>
+                        <div class="contact-item-text">
+                            <h4>WhatsApp</h4>
+                            <p>311-166-4107</p>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="contact-cta">💬 Escríbenos por WhatsApp</a>
+                </div>
+                
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14894.661728842078!2d-104.37889!3d21.04361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842735c5d5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sIxtl%C3%A1n%20del%20R%C3%ADo%2C%20Nay.!5e0!3m2!1ses!2smx!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="img/logo.jpg" alt="AVA Soluciones Solares" class="footer-logo">
+        <p>© 2026 AVA Soluciones Solares. Todos los derechos reservados.</p>
+        <p>Ixtlán del Río, Nayarit</p>
+        <div class="footer-links">
+            <a href="https://www.facebook.com/share/181k7zw4LR/" target="_blank">📘</a>
+            <a href="https://wa.me/523111664107" target="_blank">💬</a>
+        </div>
+    </footer>
+</body>
+</html>
