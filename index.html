@@ -3,76 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVA Soluciones Solares | Paneles Solares y Aires Acondicionados en Ixtlán del Río</title>
-    <meta name="description" content="Expertos en energía solar y climatización en Ixtlán del Río, Nayarit. Paneles solares, aires acondicionados con instalación incluida. ¡Cotiza ahora!">
+    <title>AVA Soluciones Solares | Paneles Solares y Aires Acondicionados en Ixtlán del Río, Nayarit</title>
+    <meta name="description" content="Expertos en energía solar y climatización en Ixtlán del Río, Nayarit. Ahorra hasta 95% en tu recibo de luz con paneles solares. Aires acondicionados con instalación incluida.">
+    <meta name="keywords" content="paneles solares Nayarit, aire acondicionado Ixtlán del Río, energía solar, instalación minisplit, ahorro energía">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AVA Soluciones Solares | Energía Solar y Climatización">
+    <meta property="og:description" content="Ahorra hasta 95% en tu recibo de luz. Paneles solares y aires acondicionados en Ixtlán del Río.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        * {
+        /* ========================================
+           CSS Reset & Base
+           ======================================== */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            /* Colores principales - Inspirados en energía solar */
+            --primary-dark: #0f2744;
+            --primary: #1a3a5c;
+            --primary-light: #2d5a87;
+            
+            /* Acentos - Sol y energía */
+            --accent: #f7931e;
+            --accent-light: #ffb347;
+            --accent-dark: #d4780a;
+            
+            /* Neutros */
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-400: #94a3b8;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            
+            /* Especiales */
+            --success: #10b981;
+            --gradient-sun: linear-gradient(135deg, #f7931e 0%, #ffcc00 50%, #f7931e 100%);
+            --gradient-sky: linear-gradient(180deg, #1a3a5c 0%, #2d5a87 100%);
+            
+            /* Sombras */
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            
+            /* Bordes */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 30px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: #1a1a2e;
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--gray-800);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
-            padding: 15px 0;
-            position: fixed;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        /* ========================================
+           Utilidades
+           ======================================== */
+        .container {
             width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
-        }
-
-        .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border-radius: var(--radius-xl);
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           Botones
+           ======================================== */
+        .btn {
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: var(--radius-xl);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(247, 147, 30, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(247, 147, 30, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--accent);
+        }
+
+        /* ========================================
+           Header / Navegación
+           ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 39, 68, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
         }
 
         .logo {
-            height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .logo img {
-            height: 100%;
+            height: 50px;
             width: auto;
+            border-radius: var(--radius-sm);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .header-phone-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
         }
 
         .header-cta {
-            background: linear-gradient(135deg, #f7b731 0%, #f5a623 100%);
-            color: #1a1a2e;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
+            background: var(--accent);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: var(--radius-xl);
+            font-weight: 600;
             font-size: 14px;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .header-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(247, 183, 49, 0.4);
+            background: var(--accent-dark);
         }
 
-        /* Hero */
+        /* ========================================
+           Hero Section
+           ======================================== */
         .hero {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
             min-height: 100vh;
+            background: var(--gradient-sky);
+            position: relative;
             display: flex;
             align-items: center;
-            padding: 120px 20px 80px;
-            position: relative;
+            padding-top: 80px;
             overflow: hidden;
         }
 
@@ -83,202 +295,313 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23ffffff10" stroke-width="0.5"/></svg>') repeat;
-            opacity: 0.3;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
         }
 
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Sol decorativo animado */
+        .hero-sun {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(247, 147, 30, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
-            position: relative;
-            z-index: 1;
+            padding: 60px 0;
         }
 
-        .hero-content h1 {
-            font-size: 48px;
+        .hero-text h1 {
+            font-size: clamp(36px, 6vw, 56px);
             font-weight: 800;
-            color: #fff;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 24px;
         }
 
-        .hero-content h1 span {
-            color: #f7b731;
+        .hero-text h1 .highlight {
+            color: var(--accent);
+            position: relative;
         }
 
-        .hero-content p {
+        .hero-text p {
             font-size: 18px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 30px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 32px;
+            max-width: 500px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 15px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #f7b731 0%, #f5a623 100%);
-            color: #1a1a2e;
-            padding: 16px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            display: inline-flex;
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image-main {
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            border: 4px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-xl);
+            display: flex;
             align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
+            gap: 12px;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(247, 183, 49, 0.4);
+        .hero-badge-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
         }
 
-        .btn-secondary {
-            background: transparent;
-            color: #fff;
-            padding: 16px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: all 0.3s;
+        .hero-badge-text {
+            font-size: 14px;
+            color: var(--gray-600);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: #f7b731;
+        .hero-badge-text strong {
+            display: block;
+            font-size: 18px;
+            color: var(--primary-dark);
         }
 
-        .hero-image {
-            text-align: center;
+        /* ========================================
+           Promo Banner
+           ======================================== */
+        .promo {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffcc00 100%);
+            padding: 40px 0;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        .promo::before {
+            content: '🔥';
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 60px;
+            opacity: 0.3;
         }
 
-        /* Promo Banner */
-        .promo-banner {
-            background: linear-gradient(135deg, #f7b731 0%, #ff6b35 100%);
-            padding: 30px 20px;
-            text-align: center;
+        .promo::after {
+            content: '🔥';
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 60px;
+            opacity: 0.3;
         }
 
         .promo-content {
-            max-width: 800px;
-            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .promo-banner h2 {
-            font-size: 28px;
-            color: #fff;
-            margin-bottom: 10px;
+        .promo-text h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 8px;
         }
 
-        .promo-banner .price-old {
+        .promo-text p {
+            color: rgba(255,255,255,0.9);
+            font-size: 16px;
+        }
+
+        .promo-price {
+            text-align: center;
+        }
+
+        .promo-price-old {
             font-size: 20px;
             color: rgba(255,255,255,0.7);
             text-decoration: line-through;
         }
 
-        .promo-banner .price-new {
-            font-size: 42px;
+        .promo-price-new {
+            font-size: 48px;
             font-weight: 800;
-            color: #fff;
+            color: var(--white);
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        .promo-banner p {
-            color: rgba(255,255,255,0.9);
-            margin-top: 10px;
+        .promo-price-note {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
         }
 
-        /* Services */
+        /* ========================================
+           Servicios
+           ======================================== */
         .services {
-            padding: 100px 20px;
-            background: #f8fafc;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 800;
-            color: #1e3a5f;
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            font-size: 18px;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto;
+            background: var(--gray-50);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .service-card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
         }
 
         .service-card h3 {
             font-size: 22px;
             font-weight: 700;
-            color: #1e3a5f;
-            margin-bottom: 15px;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
         }
 
         .service-card p {
-            color: #64748b;
+            color: var(--gray-600);
+            margin-bottom: 20px;
             font-size: 15px;
         }
 
-        /* Benefits */
-        .benefits {
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%);
+        .service-features {
+            list-style: none;
         }
 
-        .benefits .section-header h2,
-        .benefits .section-header p {
-            color: #fff;
+        .service-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: 10px;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ========================================
+           Beneficios
+           ======================================== */
+        .benefits {
+            background: var(--gradient-sky);
+            position: relative;
+        }
+
+        .benefits .section-title,
+        .benefits .section-subtitle {
+            color: var(--white);
+        }
+
+        .benefits .section-subtitle {
+            opacity: 0.85;
         }
 
         .benefits-grid {
@@ -287,172 +610,384 @@
             gap: 30px;
         }
 
-        .benefit-item {
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 32px;
             text-align: center;
-            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
         }
 
         .benefit-icon {
-            font-size: 50px;
+            font-size: 48px;
             margin-bottom: 20px;
+            display: block;
         }
 
-        .benefit-item h3 {
+        .benefit-card h3 {
             font-size: 20px;
             font-weight: 700;
-            color: #f7b731;
-            margin-bottom: 10px;
+            color: var(--accent);
+            margin-bottom: 12px;
         }
 
-        .benefit-item p {
+        .benefit-card p {
             color: rgba(255,255,255,0.8);
             font-size: 15px;
         }
 
-        /* Contact */
+        /* ========================================
+           Proceso
+           ======================================== */
+        .process {
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 45px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: var(--gray-200);
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-number {
+            width: 90px;
+            height: 90px;
+            background: var(--white);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* ========================================
+           Contacto
+           ======================================== */
         .contact {
-            padding: 100px 20px;
-            background: #fff;
+            background: var(--gray-50);
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 60px;
-            align-items: center;
+            align-items: start;
         }
 
         .contact-info h2 {
             font-size: 36px;
             font-weight: 800;
-            color: #1e3a5f;
-            margin-bottom: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
         }
 
-        .contact-info p {
-            color: #64748b;
-            margin-bottom: 30px;
-            font-size: 16px;
+        .contact-info > p {
+            color: var(--gray-600);
+            margin-bottom: 32px;
+            font-size: 17px;
         }
 
-        .contact-item {
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-card {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding: 20px;
-            background: #f8fafc;
-            border-radius: 12px;
+            gap: 16px;
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
         }
 
-        .contact-item-icon {
-            font-size: 30px;
+        .contact-card-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
         }
 
-        .contact-item-text h4 {
-            font-size: 14px;
-            color: #64748b;
-            font-weight: 500;
-        }
-
-        .contact-item-text p {
-            font-size: 16px;
-            color: #1e3a5f;
+        .contact-card-text h4 {
+            font-size: 12px;
             font-weight: 600;
-            margin: 0;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .contact-card-text p {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-dark);
         }
 
         .contact-cta {
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-            color: #fff;
-            padding: 20px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 20px;
-            transition: all 0.3s;
-        }
-
-        .contact-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            margin-top: 32px;
         }
 
         .contact-map {
-            border-radius: 20px;
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-lg);
+            border: 4px solid var(--white);
         }
 
         .contact-map iframe {
             width: 100%;
-            height: 400px;
+            height: 450px;
             border: none;
+            display: block;
         }
 
-        /* Footer */
+        /* ========================================
+           Footer
+           ======================================== */
         .footer {
-            background: #0d2137;
-            padding: 40px 20px;
-            text-align: center;
+            background: var(--primary-dark);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .footer-logo {
-            height: 60px;
-            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .footer p {
-            color: rgba(255,255,255,0.6);
+        .footer-logo img {
+            height: 60px;
+            border-radius: var(--radius-sm);
+        }
+
+        .footer-logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-logo-text span {
+            color: var(--accent);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
             font-size: 14px;
         }
 
-        .footer-links {
-            margin-top: 20px;
+        /* ========================================
+           WhatsApp Float Button
+           ======================================== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            animation: bounce 2s infinite;
         }
 
-        .footer-links a {
-            color: #f7b731;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 24px;
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-container,
-            .contact-grid {
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ========================================
+           Responsive Design
+           ======================================== */
+        @media (max-width: 1024px) {
+            .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .hero-content h1 {
-                font-size: 32px;
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .hero-buttons {
                 justify-content: center;
             }
 
-            .hero-image {
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 70px 0;
+            }
+
+            .header-phone {
                 display: none;
             }
 
             .header-cta {
-                padding: 10px 20px;
-                font-size: 12px;
+                padding: 10px 18px;
+                font-size: 13px;
             }
 
-            .promo-banner h2 {
-                font-size: 22px;
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
             }
 
-            .promo-banner .price-new {
+            .promo-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
                 font-size: 32px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
             }
         }
     </style>
@@ -460,138 +995,236 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="img/logo.jpg" alt="AVA Soluciones Solares">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <img src="img/logo.jpg" alt="AVA Soluciones Solares">
+                    <span class="logo-text">AVA <span>Soluciones Solares</span></span>
+                </a>
+                <div class="header-contact">
+                    <div class="header-phone">
+                        <span class="header-phone-icon">📞</span>
+                        <span>324-102-97-84</span>
+                    </div>
+                    <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="header-cta">Cotizar Gratis</a>
+                </div>
             </div>
-            <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="header-cta">📞 Cotizar Ahora</a>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-container">
+        <div class="hero-sun"></div>
+        <div class="container">
             <div class="hero-content">
-                <h1>Energía Solar y <span>Climatización</span> para tu Hogar</h1>
-                <p>Ahorra en tu recibo de luz con paneles solares y mantén tu hogar fresco con nuestros aires acondicionados. Instalación profesional en Ixtlán del Río y alrededores.</p>
-                <div class="hero-buttons">
-                    <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20paneles%20solares" class="btn-primary">☀️ Paneles Solares</a>
-                    <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20aires%20acondicionados" class="btn-secondary">❄️ Aires Acondicionados</a>
+                <div class="hero-text">
+                    <h1>Ahorra hasta <span class="highlight">95%</span> en tu recibo de luz</h1>
+                    <p>Somos expertos en energía solar y climatización en Ixtlán del Río. Te ayudamos a reducir drásticamente tu consumo eléctrico con paneles solares de alta eficiencia y aires acondicionados con instalación profesional.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20cotizar%20paneles%20solares" class="btn btn-primary">☀️ Cotizar Paneles Solares</a>
+                        <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20cotizar%20un%20aire%20acondicionado" class="btn btn-outline">❄️ Cotizar Aire Acondicionado</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">95%</span>
+                            <span class="hero-stat-label">Ahorro en luz</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">+500</span>
+                            <span class="hero-stat-label">Clientes satisfechos</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">5 años</span>
+                            <span class="hero-stat-label">De garantía</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="Instalación de paneles solares" class="hero-image-main">
+                    <div class="hero-badge">
+                        <div class="hero-badge-icon">✓</div>
+                        <div class="hero-badge-text">
+                            <strong>Servicio Local</strong>
+                            Ixtlán del Río y alrededores
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="Paneles Solares">
+        </div>
+    </section>
+
+    <!-- Promoción -->
+    <section class="promo">
+        <div class="container">
+            <div class="promo-content">
+                <div class="promo-text">
+                    <h3>🔥 ¡GRAN PROMOCIÓN! 🔥</h3>
+                    <p>Aire Acondicionado 1 Ton + Instalación Básica</p>
+                </div>
+                <div class="promo-price">
+                    <span class="promo-price-old">$7,800.00</span>
+                    <span class="promo-price-new">$6,780.00</span>
+                    <span class="promo-price-note">*Aire convencional 110V solo frío</span>
+                </div>
+                <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20la%20promoción%20del%20aire%20acondicionado%20a%20$6,780" class="btn btn-whatsapp">💬 ¡Lo Quiero!</a>
             </div>
         </div>
     </section>
 
-    <!-- Promo Banner -->
-    <section class="promo-banner">
-        <div class="promo-content">
-            <h2>🔥 ¡GRAN PROMOCIÓN! 🔥</h2>
-            <p>Aire Acondicionado 1 Tonelada + Instalación Básica</p>
-            <span class="price-old">$7,800.00</span>
-            <div class="price-new">$6,780.00</div>
-            <p>*Aire convencional de 1 ton a 110V solo frío</p>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section class="services">
-        <div class="section-container">
+    <!-- Servicios -->
+    <section class="services section" id="servicios">
+        <div class="container">
             <div class="section-header">
-                <h2>Nuestros Servicios</h2>
-                <p>Soluciones integrales en energía solar y climatización para hogares y negocios</p>
+                <span class="section-tag">Nuestros Servicios</span>
+                <h2 class="section-title">Soluciones en Energía y Climatización</h2>
+                <p class="section-subtitle">Ofrecemos productos de alta calidad con instalación profesional y garantía en todos nuestros trabajos.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">☀️</div>
                     <h3>Paneles Solares</h3>
-                    <p>Reduce hasta un 95% tu recibo de luz. Instalación profesional, garantía y financiamiento disponible.</p>
+                    <p>Genera tu propia energía y olvídate de los recibos de luz altos. Instalación profesional con interconexión a CFE.</p>
+                    <ul class="service-features">
+                        <li>Ahorro de hasta 95% en tu recibo</li>
+                        <li>Equipos de alta eficiencia</li>
+                        <li>Trámites ante CFE incluidos</li>
+                        <li>Garantía de 5 a 25 años</li>
+                        <li>Financiamiento disponible</li>
+                    </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">❄️</div>
                     <h3>Aires Acondicionados</h3>
-                    <p>Venta e instalación de equipos de las mejores marcas. Minisplits, aires convencionales y más.</p>
+                    <p>Mantén tu hogar o negocio fresco con equipos de las mejores marcas. Instalación incluida.</p>
+                    <ul class="service-features">
+                        <li>Minisplits y aires convencionales</li>
+                        <li>Instalación profesional incluida</li>
+                        <li>Equipos inverter (mayor ahorro)</li>
+                        <li>Todas las capacidades disponibles</li>
+                        <li>Garantía de fabricante</li>
+                    </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔧</div>
                     <h3>Mantenimiento</h3>
-                    <p>Servicio de mantenimiento preventivo y correctivo para que tus equipos funcionen siempre al máximo.</p>
+                    <p>Mantén tus equipos funcionando al máximo con nuestro servicio de mantenimiento preventivo y correctivo.</p>
+                    <ul class="service-features">
+                        <li>Limpieza de paneles solares</li>
+                        <li>Mantenimiento de minisplits</li>
+                        <li>Revisión de sistemas eléctricos</li>
+                        <li>Reparaciones especializadas</li>
+                        <li>Planes de mantenimiento anual</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section class="benefits">
-        <div class="section-container">
+    <!-- Beneficios -->
+    <section class="benefits section">
+        <div class="container">
             <div class="section-header">
-                <h2>¿Por Qué Elegirnos?</h2>
-                <p>Más de años de experiencia nos respaldan</p>
+                <span class="section-tag">¿Por Qué Elegirnos?</span>
+                <h2 class="section-title">La Mejor Opción en la Región</h2>
+                <p class="section-subtitle">Somos tu aliado local en soluciones de energía renovable y climatización.</p>
             </div>
             <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">✅</div>
-                    <h3>Instalación Profesional</h3>
-                    <p>Técnicos certificados y equipos de alta calidad</p>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🏆</span>
+                    <h3>Experiencia Comprobada</h3>
+                    <p>Años de experiencia instalando sistemas solares y de climatización en la región.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">💰</div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">💰</span>
                     <h3>Precios Competitivos</h3>
-                    <p>Las mejores ofertas de la región</p>
+                    <p>Te ofrecemos los mejores precios del mercado sin sacrificar calidad.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🛡️</div>
-                    <h3>Garantía</h3>
-                    <p>Respaldamos todos nuestros trabajos</p>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🛡️</span>
+                    <h3>Garantía Real</h3>
+                    <p>Respaldamos todos nuestros trabajos con garantía por escrito.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">📍</div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📍</span>
                     <h3>Servicio Local</h3>
-                    <p>Atención rápida en Ixtlán del Río y alrededores</p>
+                    <p>Estamos en Ixtlán del Río. Respuesta rápida y atención personalizada.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact">
-        <div class="section-container">
+    <!-- Proceso -->
+    <section class="process section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">¿Cómo Funciona?</span>
+                <h2 class="section-title">Proceso Simple y Transparente</h2>
+                <p class="section-subtitle">En 4 pasos tendrás tu sistema instalado y funcionando.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Contáctanos</h3>
+                    <p>Escríbenos por WhatsApp o llámanos para agendar una visita sin costo.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Evaluación</h3>
+                    <p>Visitamos tu hogar o negocio para evaluar tus necesidades específicas.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Cotización</h3>
+                    <p>Te presentamos una propuesta clara con precios, tiempos y garantías.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Instalación</h3>
+                    <p>Nuestros técnicos realizan la instalación profesional y puesta en marcha.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact section" id="contacto">
+        <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h2>Contáctanos</h2>
-                    <p>Estamos listos para ayudarte. Solicita tu cotización sin compromiso.</p>
+                    <h2>¿Listo para Ahorrar?</h2>
+                    <p>Contáctanos hoy mismo y recibe una cotización gratuita sin compromiso. Estamos aquí para ayudarte a reducir tu consumo eléctrico.</p>
                     
-                    <div class="contact-item">
-                        <span class="contact-item-icon">📍</span>
-                        <div class="contact-item-text">
-                            <h4>Dirección</h4>
-                            <p>Matamoros #6 esq. con Hidalgo, Ixtlán del Río, Nayarit</p>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">📍</div>
+                            <div class="contact-card-text">
+                                <h4>Dirección</h4>
+                                <p>Matamoros #6 esq. con Hidalgo<br>Ixtlán del Río, Nayarit</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">📞</div>
+                            <div class="contact-card-text">
+                                <h4>Teléfonos</h4>
+                                <p>324-102-97-84 / 324-108-11-64</p>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-card-icon">💬</div>
+                            <div class="contact-card-text">
+                                <h4>WhatsApp</h4>
+                                <p>311-166-4107</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-item-icon">📞</span>
-                        <div class="contact-item-text">
-                            <h4>Teléfonos</h4>
-                            <p>324-102-97-84 / 324-108-11-64</p>
-                        </div>
+
+                    <div class="contact-cta">
+                        <a href="https://wa.me/523111664107?text=Hola,%20me%20gustaría%20recibir%20una%20cotización" class="btn btn-whatsapp btn-lg">💬 Cotizar por WhatsApp</a>
                     </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-item-icon">💬</span>
-                        <div class="contact-item-text">
-                            <h4>WhatsApp</h4>
-                            <p>311-166-4107</p>
-                        </div>
-                    </div>
-                    
-                    <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="contact-cta">💬 Escríbenos por WhatsApp</a>
                 </div>
                 
                 <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14894.661728842078!2d-104.37889!3d21.04361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842735c5d5d5d5d5%3A0x5d5d5d5d5d5d5d5d!2sIxtl%C3%A1n%20del%20R%C3%ADo%2C%20Nay.!5e0!3m2!1ses!2smx!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.8661825898975!2d-104.3727103!3d21.0436698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428d94c3f89b4fb%3A0x3b7a52c4f1b9c456!2sMatamoros%20%26%20Hidalgo%2C%20Centro%2C%2063940%20Ixtl%C3%A1n%20del%20R%C3%ADo%2C%20Nay.!5e0!3m2!1ses!2smx!4v1707238800000!5m2!1ses!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -599,13 +1232,26 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <img src="img/logo.jpg" alt="AVA Soluciones Solares" class="footer-logo">
-        <p>© 2026 AVA Soluciones Solares. Todos los derechos reservados.</p>
-        <p>Ixtlán del Río, Nayarit</p>
-        <div class="footer-links">
-            <a href="https://www.facebook.com/share/181k7zw4LR/" target="_blank">📘</a>
-            <a href="https://wa.me/523111664107" target="_blank">💬</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo.jpg" alt="AVA Soluciones Solares">
+                    <span class="footer-logo-text">AVA <span>Soluciones Solares</span></span>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/181k7zw4LR/" target="_blank" aria-label="Facebook">📘</a>
+                    <a href="https://wa.me/523111664107" target="_blank" aria-label="WhatsApp">💬</a>
+                    <a href="tel:+523241029784" aria-label="Teléfono">📞</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AVA Soluciones Solares. Todos los derechos reservados.</p>
+                <p>Ixtlán del Río, Nayarit, México</p>
+            </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/523111664107?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios" class="whatsapp-float" aria-label="Contactar por WhatsApp">💬</a>
 </body>
 </html>
